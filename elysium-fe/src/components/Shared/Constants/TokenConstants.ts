@@ -1,0 +1,5 @@
+export const DEFAULT_MINT_PASS_ID = 0
+
+export const WITHDRAW_TAX = 25
+export const WITHDRAW_BLOCK_LIFETIME = 3
+export const MINT_WEAPONS_BLOCK_LIFETIME = 3

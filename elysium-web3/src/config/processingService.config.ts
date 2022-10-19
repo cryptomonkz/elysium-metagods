@@ -1,0 +1,7 @@
+const PROCESSING_SERVICE_ADDRESS = process.env.PROCESSING_SERVICE_ADDRESS || 'http://localhost:8888';
+
+const WEBSOCKET_CONTROLLER = `${PROCESSING_SERVICE_ADDRESS}/api/public/websocket`
+
+export const HANDLE_DEPOSIT_ENDPOINT = `${WEBSOCKET_CONTROLLER}/handle-deposit`
+export const HANDLE_WITHDRAW_ENDPOINT = `${WEBSOCKET_CONTROLLER}/handle-withdraw`
+export const HANDLE_MINT_WEAPONS_ENDPOINT = `${WEBSOCKET_CONTROLLER}/handle-mint-weapons`

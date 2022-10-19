@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Tournament.
+    -->
+    <changeSet id="20220530183519-1" author="jhipster">
+        <createTable tableName="tournament">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="active" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="tournament_number" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="enrollment_start_time" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="enrollment_end_time" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="tournament_start_time" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="tournament_end_time" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="quests_assigning_frequency" type="interval">
+                <constraints nullable="false" />
+            </column>
+            <column name="base_quest_points_reward" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="quest_well_suited_god_bonus_percentage" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="quest_partially_suited_god_bonus_percentage" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="quest_primordial_bonus" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="enrollment_fee" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="total_fees_collected" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="tournament" columnName="enrollment_start_time" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="tournament" columnName="enrollment_end_time" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="tournament" columnName="tournament_start_time" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="tournament" columnName="tournament_end_time" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <changeSet id="20220530183519-seq-gen" author="jhipster">
+        <createSequence sequenceName="tournament_sequence_generator" startValue="100000" incrementBy="1"/>
+    </changeSet>
+</databaseChangeLog>

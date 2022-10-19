@@ -1,0 +1,34 @@
+{
+  "changelogDate": "20220504194618",
+  "clientRootFolder": "elysiumBe",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "amount",
+      "fieldType": "Double",
+      "fieldValidateRules": []
+    },
+    {
+      "fieldName": "reason",
+      "fieldType": "BlockedAmountReason",
+      "fieldValidateRules": [],
+      "fieldValues": "WITHDRAW"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "elysiumBe",
+  "name": "BlockedAmount",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "id",
+      "otherEntityName": "wallet",
+      "relationshipName": "wallet",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": []
+    }
+  ],
+  "service": "serviceClass"
+}

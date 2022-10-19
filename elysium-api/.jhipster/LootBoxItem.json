@@ -1,0 +1,82 @@
+{
+  "applications": ["elysiumBe"],
+  "changelogDate": "20220715160702",
+  "clientRootFolder": "elysiumBe",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "loot_box_item",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "imageUrl",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "amountAvailable",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "weight",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "isOnChain",
+      "fieldType": "Boolean"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "elysiumBe",
+  "name": "LootBoxItem",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "lootBoxInGameTokenItem",
+      "otherEntityRelationshipName": "lootBoxItem",
+      "ownerSide": true,
+      "relationshipName": "inGameTokenItem",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "lootBoxErc20Item",
+      "otherEntityRelationshipName": "lootBoxItem",
+      "ownerSide": true,
+      "relationshipName": "erc20Item",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "lootBoxErc721Item",
+      "otherEntityRelationshipName": "lootBoxItem",
+      "ownerSide": true,
+      "relationshipName": "erc721Item",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "lootBoxErc1155Item",
+      "otherEntityRelationshipName": "lootBoxItem",
+      "ownerSide": true,
+      "relationshipName": "erc1155Item",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "lootBox",
+      "otherEntityRelationshipName": "items",
+      "relationshipName": "lootBox",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

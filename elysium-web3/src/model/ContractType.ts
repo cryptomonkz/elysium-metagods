@@ -1,0 +1,7 @@
+export enum ContractType {
+  GOD = 'GOD',
+  WEAPON = 'WEAPON',
+  TOKEN = 'TOKEN',
+  MINTPASS = 'MINTPASS',
+  MINTPASS_STAKING = 'MINTPASS_STAKING'
+}

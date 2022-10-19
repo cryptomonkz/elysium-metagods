@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity GodTournamentEnrollment.
+    -->
+    <changeSet id="20220530183520-1" author="jhipster">
+        <createTable tableName="god_tournament_enrollment">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="enrollment_date_time" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="total_points" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="god_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="tournament_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="god_tournament_enrollment" columnName="enrollment_date_time" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <changeSet id="20220530183520-seq-gen" author="jhipster">
+        <createSequence sequenceName="god_tournament_enrollment_sequence_generator" startValue="100000" incrementBy="1"/>
+    </changeSet>
+</databaseChangeLog>

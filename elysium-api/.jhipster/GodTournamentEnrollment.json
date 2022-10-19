@@ -1,0 +1,50 @@
+{
+  "applications": ["elysiumBe"],
+  "changelogDate": "20220530183520",
+  "clientRootFolder": "elysiumBe",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "god_tournament_enrollment",
+  "fields": [
+    {
+      "fieldName": "tournamentId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "godId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "totalPoints",
+      "fieldType": "Long"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "elysiumBe",
+  "name": "GodTournamentEnrollment",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "god",
+      "otherEntityRelationshipName": "tournamentEnrollments",
+      "relationshipName": "god",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "tournament",
+      "otherEntityRelationshipName": "participants",
+      "relationshipName": "tournament",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "godQuest",
+      "otherEntityRelationshipName": "godEnrolled",
+      "relationshipName": "questsAssigned",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

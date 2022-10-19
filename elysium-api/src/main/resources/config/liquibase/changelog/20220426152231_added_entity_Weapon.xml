@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+
+    <!--
+        Added the entity Weapon.
+    -->
+    <changeSet id="20220426152231-1" author="jhipster">
+        <createTable tableName="weapon">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="trait" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="stake_data_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_weapon__stake_data_id" />
+            </column>
+            <column name="owner_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20220615000000-1" author="RGEO">
+        <addColumn tableName="weapon">
+            <column name="quest_bonus" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

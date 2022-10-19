@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "imposing-racer-337822",
+    "development": "elysium-development-52371",
+    "stage": "elysium-stage"
+  },
+  "targets": {}
+}

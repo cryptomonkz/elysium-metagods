@@ -1,0 +1,43 @@
+{
+  "changelogDate": "20220604124819",
+  "clientRootFolder": "elysiumBe",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "rank",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "godId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "godName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "walletAddress",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "walletNickname",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "totalPoints",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "enrollmentDateTime",
+      "fieldType": "Instant"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "elysiumBe",
+  "name": "TournamentLeaderboard",
+  "pagination": "pagination",
+  "readOnly": true,
+  "relationships": [],
+  "service": "serviceClass"
+}

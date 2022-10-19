@@ -1,0 +1,50 @@
+{
+  "applications": ["elysiumBe"],
+  "changelogDate": "20220530183519",
+  "clientRootFolder": "elysiumBe",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "tournament",
+  "fields": [
+    {
+      "fieldName": "enrollmentStartTime",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "enrollmentEndTime",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "tournamentStartDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "tournamentEndDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "enrollmentFee",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "totalFeesCollected",
+      "fieldType": "Long"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "elysiumBe",
+  "name": "Tournament",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "godTournamentEnrollment",
+      "otherEntityRelationshipName": "tournament",
+      "relationshipName": "participants",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

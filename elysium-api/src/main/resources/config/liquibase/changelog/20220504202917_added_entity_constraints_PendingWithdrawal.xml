@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity PendingTokenSpending.
+    -->
+    <changeSet id="20220504202917-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="id"
+                                 baseTableName="pending_withdrawal"
+                                 constraintName="fk_pending_withdrawal__blocked_amount_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="blocked_amount"/>
+    </changeSet>
+</databaseChangeLog>

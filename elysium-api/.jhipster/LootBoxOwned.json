@@ -1,0 +1,40 @@
+{
+  "applications": ["elysiumBe"],
+  "changelogDate": "20220715160707",
+  "clientRootFolder": "elysiumBe",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "loot_box_owned",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "amount",
+      "fieldType": "Long"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "elysiumBe",
+  "name": "LootBoxOwned",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "lootBox",
+      "otherEntityRelationshipName": "lootBoxOwned",
+      "relationshipName": "lootBox",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "wallet",
+      "otherEntityRelationshipName": "lootBoxOwned",
+      "relationshipName": "owner",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

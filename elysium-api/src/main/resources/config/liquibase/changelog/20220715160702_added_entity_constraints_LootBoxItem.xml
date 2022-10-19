@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity LootBoxItem.
+    -->
+    <changeSet id="20220715160702-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="in_game_token_item_id"
+                                 baseTableName="loot_box_item"
+                                 constraintName="fk_loot_box_item__in_game_token_item_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="loot_box_in_game_token_item"/>
+
+        <addForeignKeyConstraint baseColumnNames="erc20item_id"
+                                 baseTableName="loot_box_item"
+                                 constraintName="fk_loot_box_item__erc20item_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="loot_box_erc_20_item"/>
+
+        <addForeignKeyConstraint baseColumnNames="erc721item_id"
+                                 baseTableName="loot_box_item"
+                                 constraintName="fk_loot_box_item__erc721item_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="loot_box_erc_721_item"/>
+
+        <addForeignKeyConstraint baseColumnNames="erc1155item_id"
+                                 baseTableName="loot_box_item"
+                                 constraintName="fk_loot_box_item__erc1155item_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="loot_box_erc_1155_item"/>
+
+        <addForeignKeyConstraint baseColumnNames="loot_box_id"
+                                 baseTableName="loot_box_item"
+                                 constraintName="fk_loot_box_item__loot_box_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="loot_box"/>
+    </changeSet>
+
+
+
+    <changeSet id="20220715160702-3" author="RGEO">
+        <sql>
+            alter table loot_box_item
+                add constraint amount_available_nonnegative check (amount_available >= 0);
+        </sql>
+    </changeSet>
+</databaseChangeLog>

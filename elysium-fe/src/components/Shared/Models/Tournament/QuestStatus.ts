@@ -1,0 +1,6 @@
+export enum QuestStatus {
+    ASSIGNABLE = "ASSIGNABLE",
+    ASSIGNED = "ASSIGNED",
+    DISMISSED = "DISMISSED",
+    FINISHED = "FINISHED",
+}

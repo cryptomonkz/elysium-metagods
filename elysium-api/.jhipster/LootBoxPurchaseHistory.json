@@ -1,0 +1,43 @@
+{
+  "applications": ["elysiumBe"],
+  "changelogDate": "20220715160708",
+  "clientRootFolder": "elysiumBe",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "loot_box_purchase_history",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "cost",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "bundleId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "walletId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "walletAddress",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "bundleData",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "elysiumBe",
+  "name": "LootBoxPurchaseHistory",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}

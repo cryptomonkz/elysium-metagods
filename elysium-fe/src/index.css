@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+}
+
+* {
+  font-family: 'Inder', serif;
+  cursor: url('assets/Images/cursor.png'), default !important;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(141, 153, 153, 0.5);
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  border: 1px solid rgb(0, 200, 130);
+  background: linear-gradient(rgb(0, 137, 90), rgb(0, 180, 115));
+}
+
+@font-face {
+  font-family: 'Inder';
+  src: local("Inder"), url('assets/Fonts/Inder-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'HuTheGame';
+  src: local("HuTheGame"), url('assets/Fonts/Hu-The-Game.ttf') format('truetype');
+}

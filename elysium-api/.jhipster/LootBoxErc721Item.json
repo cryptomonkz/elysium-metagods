@@ -1,0 +1,31 @@
+{
+  "applications": ["elysiumBe"],
+  "changelogDate": "20220715160704",
+  "clientRootFolder": "elysiumBe",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "loot_box_erc_721_item",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "contractAddress",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tokenId",
+      "fieldType": "Long"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "elysiumBe",
+  "name": "LootBoxErc721Item",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}

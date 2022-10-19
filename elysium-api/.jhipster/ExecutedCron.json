@@ -1,0 +1,41 @@
+{
+  "changelogDate": "20220507233203",
+  "clientRootFolder": "elysiumBe",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "cronType",
+      "fieldType": "CronType",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "WITHDRAW,DEPOSIT"
+    },
+    {
+      "fieldName": "startPeriod",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "endPeriod",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "jobStartedAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "jobEndedAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "elysiumBe",
+  "name": "ExecutedCron",
+  "pagination": "no",
+  "readOnly": true,
+  "relationships": [],
+  "service": "serviceClass"
+}

@@ -1,0 +1,42 @@
+{
+  "applications": ["elysiumBe"],
+  "changelogDate": "20220426152231",
+  "clientRootFolder": "elysiumBe",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "weapon",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "trait",
+      "fieldType": "Gemstone",
+      "fieldValues": "AGNO,ASTRAL,REFLECTION,CONJUNCTION,AURORA,CHAOS,PURIFICATION"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "elysiumBe",
+  "name": "Weapon",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "stakedToken",
+      "otherEntityRelationshipName": "weapon",
+      "ownerSide": true,
+      "relationshipName": "stakeData",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "wallet",
+      "otherEntityRelationshipName": "weapons",
+      "relationshipName": "owner",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

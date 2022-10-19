@@ -1,0 +1,31 @@
+{
+  "applications": ["elysiumBe"],
+  "changelogDate": "20220530183522",
+  "clientRootFolder": "elysiumBe",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "god_quest_result",
+  "fields": [
+    {
+      "fieldName": "isSuccessful",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "pointsGained",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "pointsBreakdown",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "elysiumBe",
+  "name": "GodQuestResult",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}

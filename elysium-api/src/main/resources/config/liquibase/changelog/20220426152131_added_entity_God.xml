@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+
+    <!--
+        Added the entity God.
+    -->
+    <changeSet id="20220426152131-1" author="jhipster">
+        <createTable tableName="god">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="trait" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="stake_data_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_god__stake_data_id" />
+            </column>
+            <column name="owner_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

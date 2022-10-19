@@ -1,0 +1,27 @@
+{
+  "changelogDate": "20220703115025",
+  "clientRootFolder": "elysiumBe",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "fromAddress",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "toAddress",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "amount",
+      "fieldType": "Long"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "elysiumBe",
+  "name": "WalletTransferHistory",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}

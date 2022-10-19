@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+
+    <changeSet id="20220509000000-1" author="jhipster">
+        <loadData
+            file="config/liquibase/token-data/weapon_token.csv"
+            separator=";"
+            tableName="weapon">
+            <column name="id" type="numeric"/>
+            <column name="trait" type="string"/>
+            <column name="name" type="string"/>
+            <column name="quest_bonus" type="numeric"/>
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

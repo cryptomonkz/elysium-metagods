@@ -1,0 +1,31 @@
+UPDATE public.tournament set active = false where true;
+
+INSERT INTO public.tournament
+(id,
+ active,
+ tournament_number,
+ enrollment_start_time,
+ enrollment_end_time,
+ tournament_start_time,
+ tournament_end_time,
+ quests_assigning_frequency,
+ base_quest_points_reward,
+ quest_well_suited_god_bonus_percentage,
+ quest_partially_suited_god_bonus_percentage,
+ quest_primordial_bonus,
+ enrollment_fee,
+ total_fees_collected)
+VALUES (100001,
+        true,
+        2,
+        '2022-06-21 09:00:00.000000',
+        '2022-06-22 08:50:00.000000',
+        '2022-06-22 09:00:00.000000',
+        '2022-06-27 09:00:00.000000',
+        '24 hours',
+        1000,
+        25,
+        10,
+        150,
+        1500,
+        0);

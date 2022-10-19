@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity God.
+    -->
+    <changeSet id="20220426152131-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="stake_data_id"
+                                 baseTableName="god"
+                                 constraintName="fk_god__stake_data_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="staked_token"/>
+
+        <addForeignKeyConstraint baseColumnNames="owner_id"
+                                 baseTableName="god"
+                                 constraintName="fk_god__owner_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="wallet"/>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity GodQuestResult.
+    -->
+    <changeSet id="20220530183522-1" author="jhipster">
+        <createTable tableName="god_quest_result">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="is_successful" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="points_gained" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="points_breakdown" type="jsonb">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20220530183522-seq-gen" author="jhipster">
+        <createSequence sequenceName="god_quest_result_sequence_generator" startValue="100000" incrementBy="1"/>
+    </changeSet>
+</databaseChangeLog>

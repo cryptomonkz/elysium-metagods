@@ -1,0 +1,46 @@
+{
+  "applications": ["elysiumBe"],
+  "changelogDate": "20220715160709",
+  "clientRootFolder": "elysiumBe",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "loot_box_reward_history",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "potentialRewards",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "elysiumBe",
+  "name": "LootBoxRewardHistory",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "lootBox",
+      "otherEntityRelationshipName": "lootBoxRewardHistory",
+      "relationshipName": "lootBox",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "wallet",
+      "otherEntityRelationshipName": "lootBoxRewardHistory",
+      "relationshipName": "owner",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "lootBoxItem",
+      "otherEntityRelationshipName": "lootBoxRewardHistory",
+      "relationshipName": "reward",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

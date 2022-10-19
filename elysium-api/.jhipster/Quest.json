@@ -1,0 +1,50 @@
+{
+  "changelogDate": "20220528171636",
+  "clientRootFolder": "elysiumBe",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "title",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "onSuccessDialogue",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "onFailDialogue",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "stakingMode",
+      "fieldType": "StakingMode",
+      "fieldValues": "STRATEGIC_DEFENSIVE,OPTIMAL_OFFENSIVE,FRONTLINE_OFFENSIVE"
+    },
+    {
+      "fieldName": "bestSuitedGods",
+      "fieldType": "GodName",
+      "fieldValues": "APHRODITE,APOLLO,ARES,ARTEMIS,ATHENA,DEMETER,HADES,HEPHAESTUS,HERA,HERMES,POSEIDON,ZEUS,UNKNOWN"
+    },
+    {
+      "fieldName": "partiallySuitedGods",
+      "fieldType": "GodName",
+      "fieldValues": "APHRODITE,APOLLO,ARES,ARTEMIS,ATHENA,DEMETER,HADES,HEPHAESTUS,HERA,HERMES,POSEIDON,ZEUS,UNKNOWN"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "elysiumBe",
+  "name": "Quest",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}

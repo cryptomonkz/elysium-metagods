@@ -1,0 +1,9 @@
+export enum Trait {
+    AGNO = 'AGNO',
+    ASTRAL = 'ASTRAL',
+    REFLECTION = 'REFLECTION',
+    CONJUNCTION = 'CONJUNCTION',
+    AURORA = 'AURORA',
+    CHAOS = 'CHAOS',
+    PURIFICATION = 'PURIFICATION',
+}

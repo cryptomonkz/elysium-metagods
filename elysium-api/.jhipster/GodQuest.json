@@ -1,0 +1,52 @@
+{
+  "applications": ["elysiumBe"],
+  "changelogDate": "20220530183521",
+  "clientRootFolder": "elysiumBe",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "god_quest",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "GodQuestStatus",
+      "fieldValues": "ASSIGNABLE,ASSIGNED,DISMISSED,FINISHED"
+    },
+    {
+      "fieldName": "dayOfTournament",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "elysiumBe",
+  "name": "GodQuest",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "godQuestResult",
+      "otherEntityRelationshipName": "godQuest",
+      "ownerSide": true,
+      "relationshipName": "result",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "quest",
+      "otherEntityRelationshipName": "godQuest",
+      "relationshipName": "quest",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "godTournamentEnrollment",
+      "otherEntityRelationshipName": "questsAssigned",
+      "relationshipName": "godEnrolled",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity StakedToken.
+    -->
+    <changeSet id="20220426152331-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="paired_token_id"
+                                 baseTableName="staked_token"
+                                 constraintName="fk_staked_token__paired_token_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="staked_token"/>
+    </changeSet>
+</databaseChangeLog>

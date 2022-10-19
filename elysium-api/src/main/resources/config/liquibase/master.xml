@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql, mariadb"/>
+    <property name="clobType" value="longvarchar" dbms="h2"/>
+    <property name="clobType" value="clob" dbms="mysql, oracle, mssql, mariadb, postgresql"/>
+    <property name="uuidType" value="uuid" dbms="h2, postgresql"/>
+    <property name="datetimeType" value="datetime(6)" dbms="mysql, mariadb"/>
+    <property name="datetimeType" value="datetime" dbms="oracle, mssql, postgresql, h2"/>
+
+    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220426152031_added_entity_Wallet.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220426152131_added_entity_God.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220426152231_added_entity_Weapon.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220426152331_added_entity_StakedToken.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220504194618_added_entity_BlockedAmount.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220504202917_added_entity_PendingWithdrawal.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220507233203_added_entity_ExecutedCron.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220508000900_added_entity_ProcessedTransaction.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220528171636_added_entity_Quest.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220530183519_added_entity_Tournament.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220530183520_added_entity_GodTournamentEnrollment.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220530183521_added_entity_GodQuest.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220530183522_added_entity_GodQuestResult.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220604000000_added_view_TournamentLeaderboard.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220607224636_added_entity_TournamentRewardDistributed.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220703115025_added_entity_WalletTransferHistory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220715160701_added_entity_LootBox.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220715160702_added_entity_LootBoxItem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220715160703_added_entity_LootBoxErc20Item.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220715160704_added_entity_LootBoxErc721Item.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220715160705_added_entity_LootBoxErc1155Item.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220715160706_added_entity_LootBoxBundle.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220715160707_added_entity_LootBoxOwned.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220715160708_added_entity_LootBoxPurchaseHistory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220715160709_added_entity_LootBoxRewardHistory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220715160710_added_entity_LootBoxRewardHistoryPool.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220716000000_added_view_LootBoxItemsPercentage.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220724162335_added_entity_LootBoxInGameTokenItem.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20220426152131_added_entity_constraints_God.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220426152231_added_entity_constraints_Weapon.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220426152331_added_entity_constraints_StakedToken.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220504194618_added_entity_constraints_BlockedAmount.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220504202917_added_entity_constraints_PendingWithdrawal.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220530183519_added_entity_constraints_Tournament.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220530183520_added_entity_constraints_GodTournamentEnrollment.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220530183521_added_entity_constraints_GodQuest.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220531000000_added_entity_constraints_Wallet.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220607224636_added_entity_constraints_TournamentRewardDistributed.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220715160702_added_entity_constraints_LootBoxItem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220715160706_added_entity_constraints_LootBoxBundle.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220715160707_added_entity_constraints_LootBoxOwned.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220715160709_added_entity_constraints_LootBoxRewardHistory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220715160710_added_entity_constraints_LootBoxRewardHistoryPool.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+    <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20220509000000_import_data_God.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220509000000_import_data_Weapon.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220528000000_adapt_entity_God_toGodNameEnum.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220528999999_import_data_Quest.xml" relativeToChangelogFile="false"/>
+</databaseChangeLog>

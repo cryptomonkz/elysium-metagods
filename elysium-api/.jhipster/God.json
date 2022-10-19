@@ -1,0 +1,42 @@
+{
+  "applications": ["elysiumBe"],
+  "changelogDate": "20220426152131",
+  "clientRootFolder": "elysiumBe",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "god",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "trait",
+      "fieldType": "Gemstone",
+      "fieldValues": "AGNO,ASTRAL,REFLECTION,CONJUNCTION,AURORA,CHAOS,PURIFICATION"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "elysiumBe",
+  "name": "God",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "stakedToken",
+      "otherEntityRelationshipName": "god",
+      "ownerSide": true,
+      "relationshipName": "stakeData",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "wallet",
+      "otherEntityRelationshipName": "gods",
+      "relationshipName": "owner",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

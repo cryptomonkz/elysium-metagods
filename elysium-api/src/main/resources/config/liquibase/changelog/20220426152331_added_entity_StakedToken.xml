@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+
+    <!--
+        Added the entity StakedToken.
+    -->
+    <changeSet id="20220426152331-1" author="jhipster">
+        <createTable tableName="staked_token">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="mode" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="last_claimed_on" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="paired_token_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_staked_token__paired_token_id" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20220426152331-seq-gen" author="jhipster">
+        <createSequence sequenceName="staked_token_sequence_generator" startValue="100000" incrementBy="1"/>
+    </changeSet>
+</databaseChangeLog>

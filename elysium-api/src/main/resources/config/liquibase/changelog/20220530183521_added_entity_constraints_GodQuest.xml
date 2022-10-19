@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity GodQuest.
+    -->
+    <changeSet id="20220530183521-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="result_id"
+                                 baseTableName="god_quest"
+                                 constraintName="fk_god_quest__result_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="god_quest_result"/>
+
+        <addForeignKeyConstraint baseColumnNames="quest_id"
+                                 baseTableName="god_quest"
+                                 constraintName="fk_god_quest__quest_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="quest"/>
+
+        <addForeignKeyConstraint baseColumnNames="god_enrolled_id"
+                                 baseTableName="god_quest"
+                                 constraintName="fk_god_quest__god_enrolled_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="god_tournament_enrollment"/>
+    </changeSet>
+</databaseChangeLog>

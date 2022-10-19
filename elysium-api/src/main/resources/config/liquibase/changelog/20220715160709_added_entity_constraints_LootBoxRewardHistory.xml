@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity LootBoxRewardHistory.
+    -->
+    <changeSet id="20220715160709-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="loot_box_id"
+                                 baseTableName="loot_box_reward_history"
+                                 constraintName="fk_loot_box_reward_history__loot_box_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="loot_box"/>
+
+        <addForeignKeyConstraint baseColumnNames="owner_id"
+                                 baseTableName="loot_box_reward_history"
+                                 constraintName="fk_loot_box_reward_history__owner_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="wallet"/>
+
+        <addForeignKeyConstraint baseColumnNames="reward_id"
+                                 baseTableName="loot_box_reward_history"
+                                 constraintName="fk_loot_box_reward_history__reward_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="loot_box_item"/>
+    </changeSet>
+</databaseChangeLog>

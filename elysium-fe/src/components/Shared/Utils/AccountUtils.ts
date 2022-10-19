@@ -1,0 +1,1 @@
+export const simplifyAccount = (account: string): string => `${account.substring(0, 5)}...${account.substring(account.length - 4)}`

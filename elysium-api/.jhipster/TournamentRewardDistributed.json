@@ -1,0 +1,30 @@
+{
+  "changelogDate": "20220607224636",
+  "clientRootFolder": "elysiumBe",
+  "databaseType": "sql",
+  "dto": "no",
+  "fields": [
+    {
+      "fieldName": "distribution",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "microserviceName": "elysiumBe",
+  "name": "TournamentRewardDistributed",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "id": true,
+      "otherEntityField": "id",
+      "otherEntityName": "tournament",
+      "otherEntityRelationshipName": "tournamentRewardDistributed",
+      "ownerSide": true,
+      "relationshipName": "tournament",
+      "relationshipType": "one-to-one",
+      "relationshipValidateRules": []
+    }
+  ],
+  "service": "serviceClass"
+}

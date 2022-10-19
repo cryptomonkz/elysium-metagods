@@ -1,0 +1,61 @@
+{
+  "applications": ["elysiumBe"],
+  "changelogDate": "20220426152331",
+  "clientRootFolder": "elysiumBe",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "staked_token",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "mode",
+      "fieldType": "StakingMode",
+      "fieldValues": "DEFENSIVE,STRATEGIC_DEFENSIVE,OPTIMAL_OFFENSIVE,FRONTLINE_OFFENSIVE"
+    },
+    {
+      "fieldName": "lastClaimedOn",
+      "fieldType": "Long"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "elysiumBe",
+  "name": "StakedToken",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "stakedToken",
+      "otherEntityRelationshipName": "reversePairedToken",
+      "ownerSide": true,
+      "relationshipName": "pairedToken",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "god",
+      "otherEntityRelationshipName": "stakeData",
+      "ownerSide": false,
+      "relationshipName": "god",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "weapon",
+      "otherEntityRelationshipName": "stakeData",
+      "ownerSide": false,
+      "relationshipName": "weapon",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "stakedToken",
+      "otherEntityRelationshipName": "pairedToken",
+      "ownerSide": false,
+      "relationshipName": "reversePairedToken",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

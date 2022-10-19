@@ -1,0 +1,48 @@
+{
+  "applications": ["elysiumBe"],
+  "changelogDate": "20220715160701",
+  "clientRootFolder": "elysiumBe",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "loot_box",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "imageUrl",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "elysiumBe",
+  "name": "LootBox",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "lootBoxBundle",
+      "otherEntityRelationshipName": "lootBox",
+      "relationshipName": "bundles",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "lootBoxItem",
+      "otherEntityRelationshipName": "lootBox",
+      "relationshipName": "items",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

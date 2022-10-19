@@ -1,0 +1,207 @@
+ enum Gemstone {
+    AGNO,
+    ASTRAL,
+    REFLECTION,
+    CONJUNCTION,
+    AURORA,
+    CHAOS,
+    PURIFICATION
+}
+
+enum StakingMode {
+    DEFENSIVE,
+    STRATEGIC_DEFENSIVE,
+    OPTIMAL_OFFENSIVE,
+    FRONTLINE_OFFENSIVE
+}
+
+enum GodQuestStatus {
+	ASSIGNABLE,
+    ASSIGNED,
+    DISMISSED,
+    FINISHED
+}
+
+entity Wallet {
+    address String required unique
+    nickname String
+}
+
+entity God {
+	id Long
+    trait Gemstone
+}
+
+entity Weapon {
+	id Long
+    trait Gemstone
+}
+
+entity StakedToken {
+    id Long
+    mode StakingMode
+}
+
+entity Tournament {
+	enrollmentStartTime Instant
+    enrollmentEndTime Instant
+	tournamentStartDate LocalDate
+    tournamentEndDate LocalDate
+    enrollmentFee Long
+    totalFeesCollected Long
+}
+
+entity GodTournamentEnrollment{
+	tournamentId Long
+    godId Long
+    totalPoints Long
+}
+
+entity GodQuest{
+	id Long
+    status GodQuestStatus
+    dayOfTournament Integer
+}
+
+entity GodQuestResult{
+    isSuccessful Boolean
+    pointsGained Long
+    pointsBreakdown String
+}
+
+entity Quest{
+    id Long
+    title String
+    description String
+    onSuccessDialogue String
+    onFailDialogue String
+    stakingMode String
+    bestSuitedGods String
+    partiallySuitedGods String
+}
+
+entity LootBox {
+    id Long
+    name String
+    description String
+    imageUrl String
+}
+
+entity LootBoxItem {
+    id Long
+    name String
+    description String
+    imageUrl String
+    amountAvailable Long
+    weight Long
+    isOnChain Boolean
+}
+
+entity LootBoxInGameTokenItem {
+    id Long
+    amount Long
+}
+
+entity LootBoxErc20Item {
+    id Long
+    contractAddress String
+    amount Long
+}
+
+entity LootBoxErc721Item {
+    id Long
+    contractAddress String
+    tokenId Long
+}
+
+entity LootBoxErc1155Item {
+    id Long
+    contractAddress String
+    tokenId Long
+    amount Long
+}
+
+entity LootBoxBundle {
+    id Long
+    amount Long
+    price Long
+    description String
+    imageUrl String
+}
+
+entity LootBoxOwned {
+    id Long
+    amount Long
+}
+
+entity LootBoxPurchaseHistory {
+    id Long
+    cost Long
+    bundleId Long
+    walletId Long
+    walletAddress String
+    bundleData String //json
+}
+
+entity LootBoxRewardHistory {
+    id Long
+    potentialRewards String //json
+}
+
+relationship ManyToOne {
+    God{owner} to Wallet{gods}
+    Weapon{owner} to Wallet{weapons}
+    GodTournamentEnrollment{god} to God{tournamentEnrollments}
+    GodTournamentEnrollment{Tournament} to Tournament{participants}
+    GodQuest{quest} to Quest
+    GodQuest{godEnrolled} to GodTournamentEnrollment{questsAssigned}
+    LootBoxBundle{lootBox} to LootBox{bundles}
+    LootBoxItem{lootBox} to LootBox{items}
+    LootBoxOwned{lootBox} to LootBox
+    LootBoxOwned{owner} to Wallet
+    LootBoxRewardHistory{lootBox} to LootBox
+    LootBoxRewardHistory{owner} to Wallet
+    LootBoxRewardHistory{reward} to LootBoxItem
+}
+
+relationship OneToOne {
+    God{stakeData} to StakedToken{god}
+    Weapon{stakeData} to StakedToken{weapon}
+    StakedToken{pairedToken} to StakedToken{reversePairedToken}
+    GodQuest{result} to GodQuestResult
+    LootBoxItem{inGameTokenItem} to LootBoxInGameTokenItem
+    LootBoxItem{erc20Item} to LootBoxErc20Item
+    LootBoxItem{erc721Item} to LootBoxErc721Item
+    LootBoxItem{erc1155Item} to LootBoxErc1155Item
+}
+
+// Set pagination options
+paginate * with pagination
+
+//Set filter
+filter all
+
+// Use Data Transfer Objects (DTO)
+dto all with mapstruct
+
+//Service
+service all with serviceClass
+
+application {
+	config {
+    	baseName elysiumBe
+        applicationType microservice
+        buildTool gradle
+        devDatabaseType postgresql
+        prodDatabaseType postgresql
+        languages [en]
+        packageName com.elysium.metagods
+        serverPort 8888
+        skipUserManagement true
+        enableHibernateCache false
+        serviceDiscoveryType no
+        cacheProvider hazelcast
+    }
+    entities *
+}
+

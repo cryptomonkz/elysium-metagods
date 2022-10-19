@@ -1,0 +1,34 @@
+{
+  "changelogDate": "20220504202917",
+  "clientRootFolder": "elysiumBe",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "signature",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "txnHash",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "elysiumBe",
+  "name": "PendingWithdrawal",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "id": true,
+      "otherEntityField": "id",
+      "otherEntityName": "blockedAmount",
+      "otherEntityRelationshipName": "pendingWithdrawal",
+      "ownerSide": true,
+      "relationshipName": "blockedAmount",
+      "relationshipType": "one-to-one",
+      "relationshipValidateRules": ["required"]
+    }
+  ],
+  "service": "serviceClass"
+}

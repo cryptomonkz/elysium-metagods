@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity LootBoxBundle.
+    -->
+    <changeSet id="20220715160706-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="loot_box_id"
+                                 baseTableName="loot_box_bundle"
+                                 constraintName="fk_loot_box_bundle__loot_box_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="loot_box"/>
+    </changeSet>
+
+    <changeSet id="20220715160706-3" author="RGEO">
+        <sql>
+            alter table loot_box_bundle
+                add constraint stock_nonnegative check (stock is null or stock >= 0);
+        </sql>
+    </changeSet>
+</databaseChangeLog>
